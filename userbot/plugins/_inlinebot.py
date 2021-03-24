@@ -138,9 +138,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             timestamp = int(time.time() * 2)
             newsecret = {str(timestamp): {"userid": u, "text": txct}}
 
-            buttons = [
-                custom.Button.inline("🔐 SHOW", data=f"secret_{timestamp}")
-            ]
+            buttons = [custom.Button.inline("🔐 SHOW", data=f"secret_{timestamp}")]
             result = builder.article(
                 title="secret message",
                 text=f"<b>📩 Secret Msg</b> for <b>{sandy}</b>. Only he/she can open it.",
@@ -224,8 +222,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 reply_pop_up_alert = "{} is useless".format(plugin_name)
             else:
                 reply_pop_up_alert = help_string
-            reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin © Omk".format(plugin_name)
+            reply_pop_up_alert += "Use .unload {} to remove this plugin © Omk".format(
+                plugin_name
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
