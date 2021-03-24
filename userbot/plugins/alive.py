@@ -1,5 +1,6 @@
 import time
 from platform import python_version
+from ..Config import Config
 
 from telethon import version
 
@@ -9,8 +10,9 @@ from . import StartTime, catversion, get_readable_time, hmention, mention, reply
 
 
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
-EMOJI = Config.CUSTOM_ALIVE_EMOJI or "✧✧"
+ALIVE_NAME = Config.ALIVE_NAME
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧"
+EMOJI = Config.CUSTOM_ALIVE_EMOJI or "➥"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -23,7 +25,7 @@ async def amireallyalive(alive):
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
         cat_caption = f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
-        cat_caption += f"<b>{EMOJI} Master : {hmention}</b>\n"
+        cat_caption += f"<b>{EMOJI} Master : {ALIVE_NAME}</b>\n"
         cat_caption += f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
         cat_caption += (
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
@@ -32,13 +34,13 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
         )
         cat_caption += (
-            f"<b>{EMOJI} Catuserbot Version :</b> <code>{catversion}</code>\n"
+            f"<b>{EMOJI} MadBoi's Bot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>"
+        cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
         await alive.client.send_file(
             alive.chat_id,
-            CAT_IMG,
+            PINEAPPLE_IMG,
             caption=cat_caption,
             parse_mode="html",
             reply_to=reply_to_id,
@@ -50,13 +52,13 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
-            f"<b>{EMOJI} Master : {hmention}</b>\n"
+            f"<b>{EMOJI} Master : {ALIVE_NAME}</b>\n"
             f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
-            f"<b>{EMOJI} Catuserbot Version :</b> <code>{catversion}</code>\n"
+            f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>",
+            cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
             parse_mode="html",
         )
 
@@ -66,13 +68,13 @@ async def amireallyalive(alive):
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
-    tgbotusername = Config.TG_BOT_USERNAME
+    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**Catuserbot is Up and Running**\n"
-    cat_caption += f"**  -Master :** {mention}\n"
+    cat_caption = f"**PineApple is Up and Running**\n"
+    cat_caption += f"**  -Master :** {ALIVE_NAME}\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
+    cat_caption += f"**  -PineApple Version :** `{catversion}`\n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
