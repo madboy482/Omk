@@ -37,10 +37,10 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} MadBoi's Bot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>"
+        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>"
         await alive.client.send_file(
             alive.chat_id,
-            PINEAPPLE_IMG,
+            CAT_IMG,
             caption=cat_caption,
             parse_mode="html",
             reply_to=reply_to_id,
@@ -56,9 +56,9 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
-            f"<b>{EMOJI} PineApple Version :</b> <code>{catversion}</code>\n"
+            f"<b>{EMOJI} MadBoi's Bot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            cat_caption += "<a href = https://github.com/madboy482/PineApple><b>PineApple</b></a> | <a href = https://telegram.me/PineApple_UB><b>Updates</b></a> | <a href = https://telegram.me/PineApple_UB_OnTopic><b>Support</b></a> | <a href = https://telegram.me/PineApple_UB_Spam><b>Spam</b></a>",
+            cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>",
             parse_mode="html",
         )
 
@@ -68,13 +68,13 @@ async def amireallyalive(alive):
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
-    tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
+    tgbotusername = Config.TG_BOT_USERNAME
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**PineApple is Up and Running**\n"
-    cat_caption += f"**  -Master :** {ALIVE_NAME}\n"
-    cat_caption += f"**  -Python Version :** `{python_version()}\n`"
-    cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**  -PineApple Version :** `{catversion}`\n"
+    cat_caption = f"**✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧**\n"
+    cat_caption += f"**  ➥ Master :** {ALIVE_NAME}\n"
+    cat_caption += f"**  ➥ Python Version :** `{python_version()}\n`"
+    cat_caption += f"**  ➥ Telethon version :** `{version.__version__}\n`"
+    cat_caption += f"**  ➥ MadBoi's Bot Version :** `{catversion}`\n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
