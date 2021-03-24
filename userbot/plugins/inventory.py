@@ -19,17 +19,8 @@ async def _(event):
                 await conv.send_message("/myinventory")
                 audio = await conv.get_response()
                 card = audio.text
-                a = card.replace("Master Balls: 1", "")
-                b = a.replace("Master Balls: 2", "")
-                c = b.replace("Master Balls: 3", "")
-                d = c.replace("Master Balls: 4", "")
-                e = d.replace("Master Balls: 5", "")
-                f = e.replace("Master Balls: 6", "")
-                g = f.replace("Master Balls: 7", "")
-                h = g.replace("Master Balls: 8", "")
-                i = h.replace("Master Balls: 9", "")
-                j = i.replace("Master Balls: 10", "")
-                await borg.send_message(event.chat_id, Inventory + j)
+                a = card.replace(":", "»")
+                await borg.send_message(event.chat_id, Inventory + a)
 
 #### MadBoi
 #### MadBoi
