@@ -12,7 +12,7 @@ from . import CMD_LIST, catalive
 CAT_IMG = Config.ALIVE_PIC or None
 TEXT_TO_DISPLAY_IN_HELP = (
     Config.TEXT_TO_DISPLAY_IN_HELP
-    or "Yeh mera maal hai !! Haat kese laga diya be tune ise? \n\nNikal, jaake apna catuserbot bana..."
+    or "Hurrr!!!! This is moi Bot, Make your Own Bot, Shu!!🙈🙈\nHurrr!! Hush!!!😏"
 )
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
@@ -57,7 +57,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Userbot Help",
+                "© Omk",
                 text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
@@ -139,11 +139,11 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             newsecret = {str(timestamp): {"userid": u, "text": txct}}
 
             buttons = [
-                custom.Button.inline("show message 🔐", data=f"secret_{timestamp}")
+                custom.Button.inline("🔐 SHOW", data=f"secret_{timestamp}")
             ]
             result = builder.article(
                 title="secret message",
-                text=f"🔒 A whisper message to {sandy}, Only he/she can open it.",
+                text=f"<b>📩 Secret Msg</b> for <b>{sandy}</b>. Only he/she can open it.",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
@@ -198,7 +198,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "You little shit, why are you looking at this ? Go away and do your own work,idiot"
+                    reply_pop_up_alert = "You little shit, why are you looking at this ? Go away and do your own work, Idiot"
             except KeyError:
                 reply_pop_up_alert = "This message no longer exists in bot server"
         else:
@@ -225,7 +225,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin ©catuserbot".format(plugin_name)
+                "Use .unload {} to remove this plugin © Omk".format(plugin_name)
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -297,11 +297,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
+                    "««", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("Close", data="close"),
                 custom.Button.inline(
-                    "⌦", data="{}_next({})".format(prefix, modulo_page)
+                    "»»", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
