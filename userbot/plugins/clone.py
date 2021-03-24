@@ -15,7 +15,7 @@ DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = (
     str(DEFAULT_BIO)
     if DEFAULT_BIO
-    else "sıɥʇ ǝpoɔǝp uǝɥʇ llıʇu∩ ˙ ǝɔɐds ǝʇɐʌıɹd ǝɯos ǝɯ ǝʌı⅁˙"
+    else "˙.˙.˙ǝɯ WԀ oʇ sᴉɥʇ ǝpoɔǝp ¿suɐǝɯ 60Ɩ8Ɛ6ᄅ op ʇɐɥʍ uǝɥ┴ ˙ϛ = q '8 = ∀ ɟI"
 )
 if Config.PRIVATE_GROUP_BOT_API_ID is None:
     BOTLOG = False
@@ -88,7 +88,7 @@ async def _(event):
     await event.client(functions.account.UpdateProfileRequest(about=bio))
     await event.client(functions.account.UpdateProfileRequest(first_name=name))
     await event.client(functions.account.UpdateProfileRequest(last_name=blank))
-    await event.edit("succesfully reverted to your account back")
+    await event.edit("Succesfully reverted to your account back")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, f"#REVERT\nSuccesfully reverted back to your profile"
