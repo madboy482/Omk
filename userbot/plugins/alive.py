@@ -1,17 +1,19 @@
 import time
 from platform import python_version
-from ..Config import Config
 
 from telethon import version
 
-from . import StartTime, catversion, get_readable_time, hmention, mention, reply_id
+from ..Config import Config
+from . import StartTime, catversion, get_readable_time, reply_id
 
 # backup
 
 
 CAT_IMG = Config.ALIVE_PIC
 ALIVE_NAME = Config.ALIVE_NAME
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧"
+CUSTOM_ALIVE_TEXT = (
+    Config.CUSTOM_ALIVE_TEXT or "✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧"
+)
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "➥"
 
 
@@ -61,6 +63,7 @@ async def amireallyalive(alive):
             "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>",
             parse_mode="html",
         )
+
 
 @bot.on(admin_cmd(outgoing=True, pattern="ialive$"))
 @bot.on(sudo_cmd(pattern="ialive$", allow_sudo=True))

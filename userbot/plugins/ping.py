@@ -2,8 +2,9 @@ import asyncio
 from datetime import datetime
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
 from userbot.managers import edit_or_reply
+from userbot.utils import admin_cmd, sudo_cmd
+
 from ..Config import Config
 
 
@@ -35,7 +36,6 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-
 @bot.on(admin_cmd(pattern="ping$"))
 @bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
@@ -49,6 +49,7 @@ async def _(event):
     await event.reply(
         f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n✥ `{ms}`ms \n✥ `{ALIVE_NAME}` \n✥ `@{TG_BOT_USERNAME}`"
     )
+
 
 @bot.on(admin_cmd(pattern=f"fping$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"fping$", allow_sudo=True))
