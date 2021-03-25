@@ -38,7 +38,7 @@ PM_START = []
 PMMESSAGE_CACHE = {}
 PMMENU = "pmpermit_menu" not in Config.NO_LOAD
 
-if Config.PRIVATE_GROUP_BOT_API_ID is None:
+if Config.PRIVATE_GROUP_BOT_API_ID == 0:
     BOTLOG = False
     BOTLOG_CHATID = "me"
 else:
@@ -176,7 +176,7 @@ async def catalive():
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"🖤༄ Catuserbot Stats ༄🖤\
+    return f"🖤༄ Omk Stats ༄🖤\
                  \n\nღ Database : {check_sgnirts}\
                   \nღ Sudo : {sudo}\
                   \nღ Uptime : {uptime}\
