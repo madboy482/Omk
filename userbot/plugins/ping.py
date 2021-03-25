@@ -108,6 +108,8 @@ async def _(event):
     start = datetime.now()
     event = await edit_or_reply(event, "<i><b>☞ Tong!</b></i>", "html")
     end = datetime.now()
+    ALIVE_NAME = Config.ALIVE_NAME
+    TG_BOT_USERNAME = Config.TG_BOT_USERNAME
     ms = (end - start).microseconds / 1000
     await event.edit(
         f"<i><b>☞ Tong</b></i>\n➥ {ms} ms\n➥ <i><b>Bot of: {ALIVE_NAME}</b></i>\n➥ <i><b>Assistant: {TG_BOT_USERNAME}</b></i>",
