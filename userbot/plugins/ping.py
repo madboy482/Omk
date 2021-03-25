@@ -99,6 +99,20 @@ async def _(event):
         )
     )
 
+@bot.on(admin_cmd(pattern="ting$"))
+@bot.on(sudo_cmd(pattern="ting$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    start = datetime.now()
+    event = await edit_or_reply(event, "<i><b>☞ Tong!</b></i>", "html")
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    await event.edit(
+        f"<i><b>☞ Tong</b></i>\n➥ {ms} ms\n➥ <i><b>Bot of: {ALIVE_NAME}</b></i>\n➥ <i><b>Assistant: {TG_BOT_USERNAME}</b></i>",
+        parse_mode="html",
+    )
+
 
 CMD_HELP.update(
     {
@@ -106,6 +120,8 @@ CMD_HELP.update(
     \n\n  •  **Syntax :** `.ping`\
     \n  •  **Function : **__Shows you the ping speed of server__\
     \n\n  •  **Syntax : **`.fping`\
+    \n  •  **Function : **__Shows the server ping with extra animation__\
+    \n\n  •  **Syntax : **`.ting`\
     \n  •  **Function : **__Shows the server ping with extra animation__\
     "
     }
