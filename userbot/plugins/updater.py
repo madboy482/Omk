@@ -1,3 +1,4 @@
+  
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "looks like a custom branch {branch_name} "
     "is being used:\n"
     "in this case, Updater is unable to identify the branch to be updated."
-    "Please check out to an official branch, and re-start the updater."
+    "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = "https://github.com/madboy482/Omki"
 REPO_REMOTE_NAME = "temponame"
