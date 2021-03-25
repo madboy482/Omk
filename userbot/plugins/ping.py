@@ -99,6 +99,7 @@ async def _(event):
         )
     )
 
+
 @bot.on(admin_cmd(pattern="ting$"))
 @bot.on(sudo_cmd(pattern="ting$", allow_sudo=True))
 async def _(event):
