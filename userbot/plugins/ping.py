@@ -47,7 +47,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.reply(
-        f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n✥ `{ms}`ms \n✥ `{ALIVE_NAME}` \n✥ `@{TG_BOT_USERNAME}`"
+        f"**█▀█ █▀█ █▄░█ █▀▀ █ \n█▀▀ █▄█ █░▀█ █▄█ ▄**\n✥ `{ms}`ms \n✥ `{ALIVE_NAME}` \n✥ `{TG_BOT_USERNAME}`"
     )
 
 
