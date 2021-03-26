@@ -5,8 +5,8 @@ import os
 import re
 import time
 
-from telethon import Button, custom, events
 from telegram import ParseMode
+from telethon import Button, custom, events
 
 from . import CMD_LIST, catalive
 
@@ -143,7 +143,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             result = builder.article(
                 title="Secret Message",
                 text=f"**📩 Secret Msg** for **{sandy}**. Only he/she can open it..",
-                buttons=buttons, parse_mode=ParseMode.Markdown,
+                buttons=buttons,
+                parse_mode=ParseMode.Markdown,
             )
             await event.answer([result] if result else None)
             if jsondata:
