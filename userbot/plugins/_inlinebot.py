@@ -142,9 +142,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = [custom.Button.inline("🔐 SHOW", data=f"secret_{timestamp}")]
             result = builder.article(
                 title="Secret Message",
-                text=f"**📩 Secret Msg** for **{sandy}**. Only he/she can open it..",
+                text=f"<b>📩 Secret Msg</b> for <b>{sandy}</b>. Only he/she can open it..",
                 buttons=buttons,
-                parse_mode=ParseMode.Markdown,
+                parse_mode=ParseMode.HTML,
             )
             await event.answer([result] if result else None)
             if jsondata:
