@@ -4,7 +4,7 @@ from platform import python_version
 from telethon import version
 
 from ..Config import Config
-from . import StartTime, catversion, get_readable_time, hmention, reply_id
+from . import StartTime, catversion, get_readable_time, reply_id
 
 # backup
 
@@ -73,7 +73,9 @@ async def amireallyalive(alive):
     tgbotusername = Config.TG_BOT_USERNAME
     reply_to_id = await reply_id(alive)
     cat_caption = f"**✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧**\n"
-    cat_caption += f"**  ➥ Boss :** [😼°『ᴍᴇᴏᴡ ᴀʀᴍʏ』°😼](https://t.me/Warning_MadBoy_is_Here)\n"
+    cat_caption += (
+        f"**  ➥ Boss :** [😼°『ᴍᴇᴏᴡ ᴀʀᴍʏ』°😼](https://t.me/Warning_MadBoy_is_Here)\n"
+    )
     cat_caption += f"**  ➥ Python Version :** `{python_version()}\n`"
     cat_caption += f"**  ➥ Telethon version :** `{version.__version__}\n`"
     cat_caption += f"**  ➥ MadBoi's Bot Version :** `{catversion}`\n"
