@@ -5,7 +5,6 @@ import os
 import re
 import time
 
-from telegram import ParseMode
 from telethon import Button, custom, events
 
 from . import CMD_LIST, catalive
