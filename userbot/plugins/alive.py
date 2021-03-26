@@ -4,7 +4,7 @@ from platform import python_version
 from telethon import version
 
 from ..Config import Config
-from . import StartTime, catversion, get_readable_time, reply_id, hmention
+from . import StartTime, catversion, get_readable_time, hmention, reply_id
 
 # backup
 
