@@ -27,7 +27,7 @@ async def amireallyalive(alive):
     _, check_sgnirts = check_data_base_heal_th()
     if CAT_IMG:
         cat_caption = f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
-        cat_caption += f"<b>{EMOJI} Master : {hmention}</b>\n"
+        cat_caption += f"<b>{EMOJI} Boss : [😼°『ᴍᴇᴏᴡ ᴀʀᴍʏ』°😼](https://t.me/Warning_MadBoy_is_Here)</b>\n"
         cat_caption += f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
         cat_caption += (
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
@@ -54,7 +54,7 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"<b>{CUSTOM_ALIVE_TEXT}</b>\n\n"
-            f"<b>{EMOJI} Master : {hmention}</b>\n"
+            f"<b>{EMOJI} Boss : [😼°『ᴍᴇᴏᴡ ᴀʀᴍʏ』°😼](https://t.me/Warning_MadBoy_is_Here)</b>\n"
             f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
@@ -73,7 +73,7 @@ async def amireallyalive(alive):
     tgbotusername = Config.TG_BOT_USERNAME
     reply_to_id = await reply_id(alive)
     cat_caption = f"**✧✧ MadBoi's BOT IS RUNNING SUCCESSFULLY ✧✧**\n"
-    cat_caption += f"**  ➥ Master :** {hmention}\n"
+    cat_caption += f"**  ➥ Boss :** [😼°『ᴍᴇᴏᴡ ᴀʀᴍʏ』°😼](https://t.me/Warning_MadBoy_is_Here)\n"
     cat_caption += f"**  ➥ Python Version :** `{python_version()}\n`"
     cat_caption += f"**  ➥ Telethon version :** `{version.__version__}\n`"
     cat_caption += f"**  ➥ MadBoi's Bot Version :** `{catversion}`\n"
