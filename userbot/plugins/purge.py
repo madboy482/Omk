@@ -61,12 +61,12 @@ async def fastpurger(event):
     await event.delete()
     hi = await event.client.send_message(
         event.chat_id,
-        "**Fast purge complete!✅**\n__Purged " `+ str(count) +` " messages.__",
+        "**Fast purge complete!✅**\n__Purged " + str(count) + " messages.__",
     )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#PURGE \n**Purge of " `+ str(count) +` " messages done successfully.**",
+            "#PURGE \n**Purge of " + str(count) + " messages done successfully.**",
         )
     await sleep(5)
     await hi.delete()
@@ -127,12 +127,12 @@ async def purge_to(event):
             await event.client.delete_messages(chat, msgs)
         await edit_delete(
             event,
-            "**Fast purge complete!✅**\n__Purged " `+ str(count) +` " messages.__",
+            "**Fast purge complete!✅**\n__Purged " + str(count) + " messages.__",
         )
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#PURGE \n**Purge of " `+ str(count) +` " messages done successfully.**",
+                "#PURGE \n**Purge of " + str(count) + " messages done successfully.**",
             )
     except Exception as e:
         await edit_delete(event, f"**Error**\n`{str(e)}`")
@@ -156,12 +156,12 @@ async def purgeme(event):
 
     smsg = await event.client.send_message(
         event.chat_id,
-        "**Purge complete!✅**\n__Purged " `+ str(count) +` " messages.__",
+        "**Purge complete!✅**\n__Purged " + str(count) + " messages.__",
     )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#PURGEME \n**Purge of " `+ str(count) +` " messages done successfully.**",
+            "#PURGEME \n**Purge of " + str(count) + " messages done successfully.**",
         )
     await sleep(5)
     await smsg.delete()
