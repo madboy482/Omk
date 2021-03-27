@@ -22,7 +22,7 @@ async def pollcreator(catpoll):
                 file=InputMediaPoll(
                     poll=Poll(
                         id=random.getrandbits(32),
-                        question="👆👆So do you guys agree with this?",
+                        question="👆👆So do you guys agree with this?👆👆\n{Poll by #MadBoi}",
                         answers=options,
                     )
                 ),
@@ -47,7 +47,7 @@ async def pollcreator(catpoll):
                     file=InputMediaPoll(
                         poll=Poll(
                             id=random.getrandbits(32),
-                            question=catinput[0],
+                            question=catinput[0] + "\n{Poll by #MadBoi}",
                             answers=options,
                         )
                     ),
