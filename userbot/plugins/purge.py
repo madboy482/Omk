@@ -61,12 +61,12 @@ async def fastpurger(event):
     await event.delete()
     hi = await event.client.send_message(
         event.chat_id,
-        "`Fast purge complete!\nPurged " + str(count) + " messages.`",
+        "**Fast purge complete!✅**\n__Purged " + str(count) + " messages.__",
     )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#PURGE \n`Purge of " + str(count) + " messages done successfully.`",
+            "#PURGE \n**Purge of " + str(count) + " messages done successfully.**",
         )
     await sleep(5)
     await hi.delete()
@@ -127,12 +127,12 @@ async def purge_to(event):
             await event.client.delete_messages(chat, msgs)
         await edit_delete(
             event,
-            "`Fast purge complete!\nPurged " + str(count) + " messages.`",
+            "**Fast purge complete!✅**\n__Purged " + str(count) + " messages.__",
         )
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#PURGE \n`Purge of " + str(count) + " messages done successfully.`",
+                "#PURGE \n**Purge of " + str(count) + " messages done successfully.**",
             )
     except Exception as e:
         await edit_delete(event, f"**Error**\n`{str(e)}`")
@@ -156,12 +156,12 @@ async def purgeme(event):
 
     smsg = await event.client.send_message(
         event.chat_id,
-        "**Purge complete!**` Purged " + str(count) + " messages.`",
+        "**Purge complete!✅**\n__Purged " + str(count) + " messages.__",
     )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "#PURGEME \n`Purge of " + str(count) + " messages done successfully.`",
+            "#PURGEME \n**Purge of " + str(count) + " messages done successfully.**",
         )
     await sleep(5)
     await smsg.delete()
@@ -183,26 +183,26 @@ async def delete_it(event):
                 await msg_src.delete()
                 if BOTLOG:
                     await event.client.send_message(
-                        BOTLOG_CHATID, "#DEL \n`Deletion of message was successful`"
+                        BOTLOG_CHATID, "#DEL \n**Deletion of message was successful..**"
                     )
             except rpcbaseerrors.BadRequestError:
                 if BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "`Well, I can't delete a message. I am not an admin`",
+                        "__Well, I can't delete a message. I am not an admin__",
                     )
         elif input_str:
-            await edit_or_reply(event, "`Well the time you mentioned is invalid.`")
+            await edit_or_reply(event, "__Well the time you mentioned is invalid.__")
         else:
             try:
                 await msg_src.delete()
                 await event.delete()
                 if BOTLOG:
                     await event.client.send_message(
-                        BOTLOG_CHATID, "#DEL \n`Deletion of message was successful`"
+                        BOTLOG_CHATID, "#DEL \n**Deletion of message was successful**"
                     )
             except rpcbaseerrors.BadRequestError:
-                await edit_or_reply(event, "`Well, I can't delete a message`")
+                await edit_or_reply(event, "__Well, I can't delete a message__")
     else:
         await event.delete()
 
