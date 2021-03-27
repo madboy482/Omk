@@ -6,9 +6,6 @@ from telethon import version
 from ..Config import Config
 from . import StartTime, catversion, get_readable_time, hmention, mention, reply_id
 
-# backup
-
-
 CAT_IMG = Config.ALIVE_PIC
 ALIVE_NAME = Config.ALIVE_NAME
 CUSTOM_ALIVE_TEXT = (
